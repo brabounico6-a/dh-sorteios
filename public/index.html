@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#020817"><meta name="description" content="DH Sorteios — participe de sorteios gamer."><link rel="icon" type="image/png" href="/dh-logo.png"><title>DH SORTEIOS</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="dashboard-body">
+<header class="topbar dash-topbar">
+  <a class="brand" href="#inicio"><img class="brand-logo" src="/dh-logo.png" alt="Logo DH"><span><b>DH SORTEIOS</b><small>SUA CONTA, SEU PRÊMIO!</small></span></a>
+  <nav class="top-nav"><a href="#inicio" data-page="inicio">⌂ <span>Início</span></a><a href="#sorteios" data-page="sorteios">🎁 <span>Sorteios</span></a><a href="#historico" data-page="historico">◷ <span>Histórico</span></a><a href="#ranking" data-page="ranking">🏆 <span>Ranking</span></a><a href="#chat" data-page="chat" class="active" id="topChat">▣ <span>Chat</span></a></nav>
+  <div class="account" id="accountArea"><button class="btn ghost" id="loginOpen">Entrar</button><button class="btn" id="registerOpen">Criar conta</button></div>
+</header>
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <a href="#inicio" class="side-link active" data-page="inicio"><span>⌂</span> Início</a>
+    <a href="#sorteios" class="side-link" data-page="sorteios"><span>🎁</span> Sorteios</a>
+    <a href="#historico" class="side-link" data-page="historico"><span>◷</span> Histórico</a>
+    <a href="#ranking" class="side-link" data-page="ranking"><span>🏆</span> Ranking</a>
+    <a href="#chat" class="side-link" data-page="chat"><span>✉</span> Caixa de Entrada</a>
+    <a href="#perfil" class="side-link" data-page="perfil" id="sideProfile"><span>♟</span> Perfil</a>
+    <a href="#configuracoes" class="side-link" data-page="configuracoes"><span>⚙</span> Configurações</a>
+    <button class="side-link side-logout" id="sideLogout"><span>⇥</span> Sair</button>
+    <div class="sidebar-brand"><img src="/dh-logo.png" alt="DH"><b>DH SORTEIOS</b><small>SUA CONTA, SEU PRÊMIO!</small></div>
+  </aside>
+  <main class="dashboard-main">
+    <section class="dashboard-page" id="page-inicio">
+      <div class="hero dashboard-hero"><div class="hero-copy"><span class="eyebrow">◆ PLATAFORMA GAMER</span><h1>SUA PRÓXIMA<br><em>CONQUISTA</em><br>PODE COMEÇAR AQUI.</h1><p>Participe de sorteios, concorra a prêmios gamer e acompanhe os resultados em um só lugar.</p><div class="actions"><a class="btn" href="#sorteios" data-page="sorteios">Explorar sorteios ↗</a><button class="btn ghost" id="heroCreate">Criar sorteio</button></div><div class="hero-stats"><div><b id="statDraws">0</b><small>SORTEIOS</small></div><div><b id="statUsers">0</b><small>MEMBROS</small></div><div><b id="statWinners">0</b><small>GANHADORES</small></div></div></div><div class="hero-art"><div class="orbit orbit1"></div><div class="orbit orbit2"></div><img class="hero-logo" src="/dh-logo.png" alt="Emblema DH gamer"><div class="art-tag">PLAY • COMPETE • WIN</div></div></div>
+      <section class="section dashboard-section" id="sorteios"><div class="section-head"><div><span class="eyebrow">ÁREA DA COMUNIDADE</span><h2>SORTEIOS <em>EM DESTAQUE</em></h2><p>Escolha seu próximo desafio.</p></div><button class="btn" id="createDraw">+ Criar sorteio</button></div><div class="filters"><button class="filter active" data-filter="all">Todos</button><button class="filter" data-filter="game">Contas e itens gamer</button><button class="filter" data-filter="numbers">Números</button></div><div id="drawGrid" class="draw-grid"></div></section>
+      <section class="section dashboard-section"><span class="eyebrow">SEM COMPLICAÇÃO</span><h2>COMO <em>FUNCIONA</em></h2><div class="steps"><article><b>01</b><h3>Crie sua conta</h3><p>Entre na comunidade DH e monte seu perfil.</p></article><article><b>02</b><h3>Escolha um sorteio</h3><p>Participe de sorteios gamer ou escolha seus números.</p></article><article><b>03</b><h3>Receba seu prêmio</h3><p>Se ganhar, as instruções chegam direto na sua caixa privada.</p></article></div></section>
+    </section>
+    <section class="dashboard-page inbox-page" id="page-chat" hidden>
+      <div class="inbox-heading"><div class="inbox-title-icon">✉</div><div><h1>Caixa de Entrada</h1><p>Aqui você recebe as notificações e prêmios dos sorteios.</p></div></div>
+      <div class="inbox-dashboard-grid">
+        <section class="inbox-list-panel"><div class="panel-heading">MENSAGENS <span id="inboxUnreadLabel">0 novas</span></div><div id="inboxMessages" class="inbox-list"><div class="inbox-empty"><div class="empty-envelope">✉</div><b>Entre na sua conta</b><p>Faça login para acessar suas mensagens privadas.</p><button class="btn" id="inboxLogin">Entrar</button></div></div></section>
+        <section class="inbox-conversation"><div class="conversation-head"><img src="/dh-logo.png" alt="DH"><div><b>DH SORTEIOS</b><span><i></i> Online</span></div><button class="conversation-menu" title="Opções">⋮</button></div><div id="conversationBody" class="conversation-body"><div class="conversation-empty">💙<p>Selecione uma mensagem para visualizar ou entre na sua conta.</p></div></div><form id="supportMessageForm" class="conversation-compose"><label class="attach-button" title="Anexar">⌁</label><textarea name="body" rows="1" maxlength="1500" required placeholder="Digite uma mensagem..." disabled></textarea><button class="send-button" disabled aria-label="Enviar">➤</button></form><p class="private-caption">Mensagem privada • somente você e a equipe DH podem ver</p></section>
+        <aside class="inbox-right"><section class="profile-card"><div class="profile-card-top"><div class="profile-card-avatar" id="dashboardAvatar">👤</div><div><b id="dashboardName">Visitante</b><span id="dashboardId">Entre na sua conta</span><small class="member-pill">♙ Membro</small></div></div><div class="profile-stats"><div><span>🎮</span><b id="profileDrawCount">0</b><small>Sorteios<br>Participados</small></div><div><span>⬇</span><b>0</b><small>Contas<br>Ganhas</small></div><div><span>▣</span><b>0</b><small>Total de<br>Pontos</small></div></div><button class="filter profile-edit-button" id="dashboardProfile">Editar perfil</button></section>
+          <section class="notice-card"><h3>⚑ Avisos</h3><div>🟢 <span>Seu prêmio será enviado diretamente para sua caixa de entrada.</span></div><div>🔵 <span>Participe apenas 1 vez por IP.</span></div><div>🔵 <span>Cada conta só pode participar 1 vez em cada sorteio.</span></div><div>🔵 <span>O criador do sorteio pode definir regras adicionais.</span></div></section>
+          <section class="server-card"><span class="server-light"></span><div><b>Status do Servidor</b><strong>● Online</strong><small>Verifique sua conexão para participar.</small></div></section>
+          <section class="dh-promo"><img src="/dh-logo.png" alt="DH"><div><b>DH SORTEIOS</b><span>Mais que sorteios,<br>é uma comunidade!</span></div></section>
+        </aside>
+      </div>
+      <div class="inbox-tools"><button class="filter" id="adminInboxOpen">Painel privado da equipe DH</button></div>
+    </section>
+    <section class="dashboard-page" id="page-historico" hidden><div class="section dashboard-section"><span class="eyebrow">SEUS RESULTADOS</span><h2>HISTÓRICO DE <em>SORTEIOS</em></h2><div id="historyList" class="winner-list"><p class="muted">Entre na sua conta para consultar seu histórico.</p></div></div></section>
+    <section class="dashboard-page" id="page-ranking" hidden><div class="section dashboard-section"><span class="eyebrow">HALL DA FAMA</span><h2>RANKING <em>DH</em></h2><div id="winnerList" class="winner-list"><p class="muted">Os resultados publicados aparecerão aqui.</p></div></div></section>
+    <section class="dashboard-page" id="page-perfil" hidden><div class="section dashboard-section"><span class="eyebrow">SUA CONTA DH</span><h2>MEU <em>PERFIL</em></h2><p>Gerencie sua foto e seus dados de membro.</p><button class="btn" id="profilePageOpen">Editar foto de perfil</button></div></section>
+    <section class="dashboard-page" id="page-configuracoes" hidden><div class="section dashboard-section"><span class="eyebrow">PREFERÊNCIAS</span><h2>CONFIGURAÇÕES</h2><p>Suas mensagens são privadas. Nunca compartilhe seu PIN administrativo.</p><button class="btn ghost" id="settingsInbox">Abrir caixa de entrada</button></div></section>
+  </main>
+</div>
+<footer class="dashboard-footer"><span>© <span id="year"></span> DH SORTEIOS. Jogue limpo. Concorra com responsabilidade.</span></footer>
+<div class="modal-backdrop" id="modal"><div class="modal"><button class="close" id="closeModal">×</button><div id="modalContent"></div></div></div><div class="toast" id="toast"></div>
+<script src="/app.js"></script>
+</body></html>
